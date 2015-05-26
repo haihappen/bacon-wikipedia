@@ -6,7 +6,6 @@ import fetch from 'imports?self=>{},es6p=es6-promise,Promise=>es6p.Promise!expor
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = { stream: new Bus(), results: new Bus() };
   }
 
@@ -37,7 +36,6 @@ class App extends Component {
 
   render() {
     let results = [];
-
     this.state.results.onValue((value) => results.push(value));
 
     return (
@@ -96,6 +94,3 @@ class SearchInput extends Component {
 
 
 React.render(<App />, document.body);
-
-
-window.searchWikipedia = new App().searchWikipedia;
